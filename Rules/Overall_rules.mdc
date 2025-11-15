@@ -1,0 +1,60 @@
+# **Kashar AI – Developer Build Rules**
+
+Concise rules to follow during development to prevent hallucination, inconsistent code, bad UI patterns, and unnecessary complexity.
+
+---
+
+## **UI & Design Rules**
+
+1. **Avoid any purple or blue contrast combinations** (commonly associated with AI‑generated UI). Stick to clean, modern neutral palettes.
+2. Follow consistent spacing, typography, and component patterns across the entire app.
+3. Do not introduce new UI patterns without purpose reuse existing styles.
+
+---
+
+## **Feature Scope & Requirements**
+
+4. **Do not build features outside the approved project scope.** No fancy animations, dashboards, or experimental add-ons.
+5. Every commit must directly align with one of the core modules: Upload → Tutor → Quiz → Flashcards → Progress.
+6. If unsure whether a feature is required, assume **NO** and keep it minimal.
+
+---
+
+## **AI/LLM Usage Rules**
+
+7. Never allow LLM to auto‑decide new architectures or libraries—always stick to documented stack.
+8. All LLM outputs must be validated for correctness before implementation.
+9. Break tasks into smaller prompts to reduce hallucination.
+10. Avoid vague instructions like "build however you want" always specify inputs, outputs, and constraints.
+
+---
+
+## **Security & Stability Rules**
+
+11. Avoid exposing API keys in frontend code.
+12. Follow Supabase Row Level Security for user data.
+13. Ensure Agora tokens are generated server‑side only.
+14. Validate PDF uploads (size limit, format) before processing.
+
+---
+
+## **Coding Quality Rules**
+
+15. Use modular, predictable folder structure.
+16. Keep each function small, testable, and with a single responsibility.
+17. Never push code that hasn't been run locally.
+18. Avoid unnecessary abstractions—simple code is better code.
+
+---
+
+## **Consistency Rules**
+
+19. Maintain consistent naming conventions across frontend & backend.
+20. Every feature must have a clearly defined input → process → output workflow.
+21. No last‑minute changes unless they fix a proven issue.
+
+---
+
+## **Focus Rule (Most Important)**
+
+22. **The goal is to finish, not over‑engineer.** Stick to required features only, avoid distractions, and keep everything minimal yet functional.

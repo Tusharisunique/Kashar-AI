@@ -1,0 +1,7 @@
+Frontend Rules (React)
+Use consistent spacing, typography, and reusable components.
+No unnecessary animations, gradients, or experimental UI elements.
+Never store API keys or tokens in the frontend.
+Keep React components modular and small.
+Validate all user inputs before sending to backend.
+Avoid over-engineering state management—use simple patterns (Context or minimal Redux).

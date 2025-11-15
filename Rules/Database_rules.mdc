@@ -1,0 +1,6 @@
+Database Rules (Supabase + ChromaDB)
+Use Supabase Row Level Security for all user-specific tables.
+Store embeddings only in Chroma, metadata only in Supabase.
+Keep table structure simple: users, documents, topics, quizzes, scores, logs.
+No storing raw PDFs in DB—use only parsed text or references.
+Ensure all quiz attempts, tutor interactions, and progress logs are timestamped.

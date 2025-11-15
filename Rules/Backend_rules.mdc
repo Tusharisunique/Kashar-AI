@@ -1,0 +1,6 @@
+Follow strict folder structure: routes → services → utils → models.
+Each endpoint must have a single responsibility.
+Validate all incoming requests (PDF size, text length, quiz params, etc.).
+Never let LLM generate backend logic without constraints.
+All Agora and Supabase tokens must be generated server-side.
+Log errors clearly and never suppress exceptions silently.

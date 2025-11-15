@@ -1,0 +1,22 @@
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+supabase>=2.0.2
+chromadb>=0.4.15
+# OpenRouter API via requests (no additional package needed)
+python-dotenv>=1.0.0
+pydantic>=2.5.2,<3.0.0
+pydantic[email]>=2.5.2
+requests>=2.31.0
+slowapi>=0.1.9
+python-jose[cryptography]>=3.3.0
+agora-token-builder>=1.0.0
+speechrecognition>=3.10.0
+pydub>=0.25.1
+gTTS>=2.4.0
+PyPDF2>=3.0.1
+openai-whisper>=20231117
+azure-cognitiveservices-speech>=1.34.0
+elevenlabs>=0.2.26
+websockets>=12.0
+aiofiles>=23.2.1

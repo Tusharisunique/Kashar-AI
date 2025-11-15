@@ -1,0 +1,354 @@
+{
+  "tech_stack": [
+    "React",
+    "JavaScript", 
+    "FastAPI",
+    "Python",
+    "Supabase",
+    "PostgreSQL",
+    "ChromaDB",
+    "Mistral AI",
+    "Agora SDK",
+    "Flask",
+    "Tailwind CSS"
+  ],
+  "features": [
+    {
+      "name": "User Authentication",
+      "description": "User signup, login, logout with Supabase Auth integration",
+      "files": [
+        "backend/routes/auth.py",
+        "backend/services/auth_service.py", 
+        "frontend/src/components/Auth/Login.js",
+        "frontend/src/components/Auth/Signup.js",
+        "frontend/src/contexts/AuthContext.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/auth/signup": {
+            "post": {
+              "summary": "User registration",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "email": {"type": "string"},
+                        "password": {"type": "string"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/auth/login": {
+            "post": {
+              "summary": "User login",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object", 
+                      "properties": {
+                        "email": {"type": "string"},
+                        "password": {"type": "string"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Document Management",
+      "description": "PDF upload, parsing, and document management with ChromaDB storage",
+      "files": [
+        "backend/routes/documents.py",
+        "backend/services/document_service.py",
+        "parsing-service/app.py",
+        "frontend/src/components/Documents/DocumentUpload.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/documents/upload": {
+            "post": {
+              "summary": "Upload and process PDF documents",
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "file": {"type": "string", "format": "binary"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/documents/": {
+            "get": {
+              "summary": "Get user documents"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "AI Tutor",
+      "description": "Real-time AI tutoring with context-aware responses using Mistral AI",
+      "files": [
+        "backend/routes/tutor.py",
+        "backend/services/tutor_service.py",
+        "frontend/src/components/Tutor/TutorRoom.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/tutor/start-session": {
+            "post": {
+              "summary": "Start a new tutor session",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "session_type": {"type": "string", "enum": ["text", "voice"]}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/tutor/message": {
+            "post": {
+              "summary": "Send message to AI tutor",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "message": {"type": "string"},
+                        "session_id": {"type": "string"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Quiz System",
+      "description": "AI-generated quizzes with adaptive difficulty adjustment",
+      "files": [
+        "backend/routes/quiz.py",
+        "backend/services/quiz_service.py",
+        "frontend/src/components/Quiz/QuizPage.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/quiz/generate": {
+            "post": {
+              "summary": "Generate quiz for a topic",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "topic": {"type": "string"},
+                        "difficulty": {"type": "string", "enum": ["easy", "medium", "hard"]},
+                        "num_questions": {"type": "integer"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/quiz/submit": {
+            "post": {
+              "summary": "Submit quiz answers",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "quiz_id": {"type": "string"},
+                        "answers": {"type": "array", "items": {"type": "integer"}}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Flashcards",
+      "description": "AI-generated flashcards for study topics",
+      "files": [
+        "backend/routes/flashcards.py",
+        "backend/services/flashcard_service.py",
+        "frontend/src/components/Flashcards/FlashcardsPage.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/flashcards/generate": {
+            "post": {
+              "summary": "Generate flashcards for a topic",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "topic": {"type": "string"},
+                        "num_cards": {"type": "integer"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/flashcards/": {
+            "get": {
+              "summary": "Get user flashcard sets"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Progress Tracking",
+      "description": "User progress analytics, streaks, and performance tracking",
+      "files": [
+        "backend/routes/progress.py",
+        "backend/services/progress_service.py",
+        "frontend/src/components/Progress/ProgressPage.js"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/progress/": {
+            "get": {
+              "summary": "Get user progress data",
+              "parameters": [
+                {
+                  "name": "days",
+                  "in": "query",
+                  "schema": {"type": "integer"}
+                }
+              ]
+            }
+          },
+          "/api/progress/streaks": {
+            "get": {
+              "summary": "Get user learning streaks"
+            }
+          },
+          "/api/progress/analytics": {
+            "get": {
+              "summary": "Get user performance analytics"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Agora Integration",
+      "description": "Real-time communication tokens for voice/video features",
+      "files": [
+        "backend/routes/agora.py",
+        "backend/services/agora_service.py"
+      ],
+      "api_doc": {
+        "paths": {
+          "/api/agora/rtc-token": {
+            "post": {
+              "summary": "Generate RTC token for voice/video",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "channel_name": {"type": "string"},
+                        "uid": {"type": "integer"},
+                        "role": {"type": "string", "enum": ["publisher", "subscriber"]}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/agora/rtm-token": {
+            "post": {
+              "summary": "Generate RTM token for messaging",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "uid": {"type": "string"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "PDF Parsing Service",
+      "description": "Flask microservice for PDF text extraction and chunking",
+      "files": [
+        "parsing-service/app.py"
+      ],
+      "api_doc": {
+        "paths": {
+          "/parse": {
+            "post": {
+              "summary": "Parse PDF and extract text chunks",
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "file": {"type": "string", "format": "binary"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/health": {
+            "get": {
+              "summary": "Health check endpoint"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

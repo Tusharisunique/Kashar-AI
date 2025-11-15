@@ -1,0 +1,6 @@
+Agora Rules (RTC + RTM)
+Generate RTC/RTM tokens only on backend (FastAPI endpoint).
+Do not create unnecessary channels—one channel per session.
+For voice sessions: route audio → STT → LLM → TTS → Agora.
+Ensure Agora event listeners (join/leave/error) are always implemented.
+Do not mix RTC and RTM logic in the same React component.

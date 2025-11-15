@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "test user signup api",
+    "description": "Verify that the user can successfully sign up with valid email and password, and appropriate error messages are returned for invalid inputs."
+  },
+  {
+    "id": "TC002",
+    "title": "test user login api",
+    "description": "Verify that the user can log in with correct credentials and receives a valid session token, and that login fails with incorrect credentials."
+  },
+  {
+    "id": "TC003",
+    "title": "test pdf upload api",
+    "description": "Verify that users can upload PDF documents successfully, triggering parsing and text extraction, and that the extracted data is stored correctly."
+  },
+  {
+    "id": "TC004",
+    "title": "test get user documents api",
+    "description": "Verify that the API returns the list of documents uploaded by the user accurately."
+  },
+  {
+    "id": "TC005",
+    "title": "test start tutor session api",
+    "description": "Verify that a new AI tutor session can be started with valid session types (text or voice) and appropriate errors are returned for invalid types."
+  },
+  {
+    "id": "TC006",
+    "title": "test send message to ai tutor api",
+    "description": "Verify that messages sent to the AI tutor are processed correctly and relevant responses are returned based on the session context."
+  },
+  {
+    "id": "TC007",
+    "title": "test generate quiz api",
+    "description": "Verify that quizzes are generated correctly for the specified topic, difficulty, and number of questions, and that the content is appropriate."
+  },
+  {
+    "id": "TC008",
+    "title": "test submit quiz answers api",
+    "description": "Verify that quiz answers can be submitted successfully and that the system records the results and updates user progress."
+  },
+  {
+    "id": "TC009",
+    "title": "test generate flashcards api",
+    "description": "Verify that flashcards are generated correctly for the specified topic and number of cards, and that the flashcards are stored and retrievable."
+  },
+  {
+    "id": "TC010",
+    "title": "test get user progress data api",
+    "description": "Verify that the API returns accurate user progress data for the specified number of days, including quiz scores and time spent metrics."
+  }
+]

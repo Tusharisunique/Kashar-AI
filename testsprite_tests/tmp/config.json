@@ -1,0 +1,19 @@
+{
+  "status": "commited",
+  "type": "backend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:8000",
+  "backendAuthType": "basic token",
+  "backendUsername": "try.tusharjoshi@gmail.com",
+  "backendPassword": "JQLCSG@8",
+  "executionArgs": {
+    "projectName": "Kashar AI",
+    "projectPath": "/Users/tusharjoshi/Desktop/Hackfest 2025/Kashar AI",
+    "testIds": [],
+    "additionalInstruction": "Focus on security vulnerabilities, authentication flaws, input validation issues, SQL injection risks, XSS vulnerabilities, API security issues, file upload security, and error handling problems. Prioritize critical security issues that could compromise user data or system integrity.",
+    "envs": {
+      "API_KEY": "sk-user-8xtzjmFC-Acx8fO90WWVKCJWy_8yEbwMhX76KaYEMglNKjWL2Arl6VHg4yCq0sr7NSx-yl4myBt1XXJm9irP_VsiPf7wkCKNB9AhydMib2sizCfq5EMCFD9Z4KUauFfcbYw"
+    }
+  },
+  "proxy": "http://fec5a262-50dd-4365-82a7-4756ca6c2d1b:8TYIFuOcpDNHXx1WMx7JGRBDQMCzKIKn@tun.testsprite.com:8080"
+}
