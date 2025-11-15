@@ -40,7 +40,17 @@ cors_origins_env = os.getenv("CORS_ORIGINS")
 if cors_origins_env:
     cors_origins = [o.strip() for o in cors_origins_env.split(",") if o.strip()]
 else:
-    cors_origins = ["http://localhost:3000", "https://localhost:3000"]  # React dev server
+    cors_origins = [
+        # Local development
+        "http://localhost:3000",
+        "https://localhost:3000",
+        
+        # Vercel preview deployments (your-app-name.vercel.app)
+        "https://*.vercel.app",
+        
+        # Vercel production deployment (your-custom-domain.com)
+        # Add your production domain here or via CORS_ORIGINS env var
+    ]
 
 app.add_middleware(
     CORSMiddleware,
